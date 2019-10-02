@@ -1,0 +1,57 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+public class Aves extends Animales{
+    private double metros;
+    private String dedos;
+
+    public Aves() {
+    }
+    public Aves(double metros,String dedos,int patas,String piel,String sangre){
+        super(patas, piel, sangre);
+        this.dedos = dedos;
+        this.metros = metros;
+    }
+    public double getMetros() {
+        return metros;
+    }
+    public void setMetros(double metros) {
+        this.metros = metros;
+    }
+    public String getDedos() {
+        return dedos;
+    }
+    public void setDedos(String dedos) {
+        this.dedos = dedos;
+    }
+    public Aves ingresaraves(){
+        Aves nuevave = new Aves();
+        patas = Integer.parseInt(JOptionPane.showInputDialog("digite numero de patas: "));
+        piel = JOptionPane.showInputDialog("recubrimiento de la piel: ");
+        sangre = JOptionPane.showInputDialog("tipo de sangre (fria/caliente)");
+        metros = Double.parseDouble(JOptionPane.showInputDialog("hasta que altura en metros puede volar: "));
+        dedos = JOptionPane.showInputDialog("tiene patas palmípedos o anisodáctilas: ");
+        
+        nuevave.setDedos(dedos);
+        nuevave.setMetros(metros);
+        nuevave.setPatas(patas);
+        nuevave.setPiel(piel);
+        nuevave.setSangre(sangre);
+        return (nuevave);
+        
+    }
+    public void imprimirAves(){
+        imprimir();
+        
+        JOptionPane.showMessageDialog(null,"vuela a: "+metros+"metros de altura");
+        JOptionPane.showMessageDialog(null,"posee patas "+dedos);
+        alimento();
+    }
+    final public void alimento(){
+        JOptionPane.showMessageDialog(null, "su alimento favorito es el maiz");
+    }
+    
+
+    
+}
