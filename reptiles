@@ -1,0 +1,57 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+public class Reptiles extends Animales{
+    private String extremidades;
+    private String crias;
+
+    public Reptiles() {
+    }
+    public Reptiles (String extremidades,String crias,int patas,String piel,String sangre){
+        super(patas, piel, sangre);
+        
+        this.crias = crias;
+        this.extremidades = extremidades;
+    }
+    public String getExtremidades() {
+        return extremidades;
+    }
+    public void setExtremidades(String extremidades) {
+        this.extremidades = extremidades;
+    }
+    public String getCrias() {
+        return crias;
+    }
+    public void setCrias(String crias) {
+        this.crias = crias;
+    }
+    public Reptiles ingresareptil (){
+        Reptiles nuevoreptil = new Reptiles();
+        patas = Integer.parseInt(JOptionPane.showInputDialog("digite numero de patas: "));
+        piel = JOptionPane.showInputDialog("recubrimiento de la piel: ");
+        sangre = JOptionPane.showInputDialog("tipo de sangre (fria/caliente): ");
+        extremidades = JOptionPane.showInputDialog("posee extremidades: ");
+        crias = JOptionPane.showInputDialog("su reptil es ovíparo u ovovivíparo: ");
+        
+        nuevoreptil.setCrias(crias);
+        nuevoreptil.setExtremidades(extremidades);
+        nuevoreptil.setPatas(patas);
+        nuevoreptil.setPiel(piel);
+        nuevoreptil.setSangre(sangre);
+        return (nuevoreptil);
+    }
+    public void imprimireptil(){
+        
+       imprimir();
+       
+       
+       JOptionPane.showMessageDialog(null,"su reptil "+extremidades+" posee extremidades");
+       JOptionPane.showMessageDialog(null, "su reptil es: "+crias);
+       alimento();
+    }
+    final public void alimento(){
+        JOptionPane.showMessageDialog(null, "su alimento favorito son las plantas");
+    }
+    
+}
