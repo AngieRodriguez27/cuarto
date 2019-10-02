@@ -1,0 +1,56 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+public class impresion {
+
+    public impresion() {
+    }
+    
+    public static void main(String[] args) {
+     String opcion;
+    try{
+
+    do{
+
+opcion = JOptionPane.showInputDialog("ingrese: \nmamifero: (m)\nave: (a)\nreptil: (r)\nsalir: (s)");
+if (opcion.equals("m"))
+{
+JOptionPane.showMessageDialog(null,"Procesando datos del mamifero");
+    Mamiferos nuevomamiferos = new Mamiferos();
+    nuevomamiferos = nuevomamiferos.ingresarMamiferos();
+    nuevomamiferos.imprimirmamifero();
+}else if(opcion.equals("a")){
+    JOptionPane.showMessageDialog(null,"Procesando datos del ave");
+    Aves nuevoave = new Aves();
+    nuevoave = nuevoave.ingresaraves();
+    nuevoave.imprimirAves();
+}
+else if (opcion.equals("r")){
+JOptionPane.showMessageDialog(null,"Procesando datos del reptil");
+    Reptiles nuevoreptiles = new Reptiles();
+    nuevoreptiles = nuevoreptiles.ingresareptil();
+    nuevoreptiles.imprimireptil();
+}else
+if (opcion.equals("s"))
+{
+JOptionPane.showMessageDialog(null,"Saliendo del Sistema");
+break;
+}
+else
+{
+JOptionPane.showMessageDialog(null,"Opción inválida");
+}
+} while (opcion.equals("m") || opcion.equals("a") || opcion.equals("r") || opcion.equals("s"));//fin del do-while
+}//Fin del try//Fin del try
+catch (Exception errorMain)
+{
+JOptionPane.showMessageDialog(null,"Error en la digitación: ");
+errorMain.printStackTrace();
+}
+
+}  
+    }
+    
+    
+
