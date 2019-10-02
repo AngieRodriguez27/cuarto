@@ -1,0 +1,55 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+public class Mamiferos extends Animales{
+    private String partos;
+    private String tipoP;
+
+    public Mamiferos() {
+    }
+    public Mamiferos (String partos,String tipoP,int patas, String piel,String sangre){
+        super(patas, piel, sangre);
+        
+        this.partos = partos;
+        this.tipoP = tipoP;
+    }
+    public String getPartos() {
+        return partos;
+    }
+    public void setPartos(String partos) {
+        this.partos = partos;
+    }
+    public String getTipoP() {
+        return tipoP;
+    }
+    public void setTipoP(String tipoP) {
+        this.tipoP = tipoP;
+    }
+    public Mamiferos ingresarMamiferos(){
+        Mamiferos nuevoMamifero = new Mamiferos();
+        patas = Integer.parseInt(JOptionPane.showInputDialog("digite numero de patas: "));
+        piel = JOptionPane.showInputDialog("recubrimiento de la piel: ");
+        sangre = JOptionPane.showInputDialog("tipo de sangre (fria/caliente): ");
+        partos = JOptionPane.showInputDialog("manera en que se forma las crias (Monotremas/Marsupiale/Placentarios: ");
+        tipoP = JOptionPane.showInputDialog("posee patas o aletas: ");
+        
+        nuevoMamifero.setPartos(partos);
+        nuevoMamifero.setPatas(patas);
+        nuevoMamifero.setPiel(piel);
+        nuevoMamifero.setSangre(sangre);
+        nuevoMamifero.setTipoP(tipoP);
+        return (nuevoMamifero);
+    }
+    public void imprimirmamifero(){
+        imprimir();
+        
+        JOptionPane.showMessageDialog(null,"la manera en que se forma su cria es: "+partos);
+        JOptionPane.showMessageDialog(null, "su mamifero posee: "+tipoP);
+        alimento();
+    }
+    final public void alimento(){
+        JOptionPane.showMessageDialog(null, "su alimento favorito es la carne");
+    }
+    
+}
